@@ -95,10 +95,10 @@ Exam objectives
 AWS Services
 
 * Compute
-  * EC2*
-  * Elastic Bean Stalk*
-  * Lambda*
-  * But Elastic Container Service* or Elastic Kubernetes Service is not stressed on the exam
+  * EC2 *
+  * Elastic Bean Stalk *
+  * Lambda *
+  * But Elastic Container Service * or Elastic Kubernetes Service is not stressed on the exam
 * Storage
   * S3 (1st service ever launched by AWS) *
   * EFS *
@@ -215,9 +215,13 @@ A specialized version of S3 for cold storage (archiving data)
 
 ### EFS - Elastic File Storage
 
+Simple, scalable, fully managed elastic NFS file system 
 Shareable hierarchical file system
 Can't be shared with Windows VM
 Stored redundantly across multiple AZs
+Uses a traditional file permissions model, file locking capabilities, and hierarchical directory structure via the NFSv4 protocol
+
+With Private Link it's possible to create a service to access your EFS as an endpoint.
 
 Per-operation latency: Low, consistent
 Throughput: Multiple GB/s
