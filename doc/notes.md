@@ -101,6 +101,7 @@ AWS Services
   * But Elastic Container Service * or Elastic Kubernetes Service is not stressed on the exam
 * Storage
   * S3 (1st service ever launched by AWS) *
+  * EBS *
   * EFS *
   * Glacier *
   * Storage Gateway
@@ -190,6 +191,9 @@ Regions and Availability Zones
 
 ### S3 - Simple Storage Service
 
+https://aws.amazon.com/s3/
+
+
 S3 Storage Classes?
 
 S3 terminology
@@ -208,28 +212,14 @@ Use cases: web serving, CMS, media and entertainment, backups, bit data analytic
 
 #### Amazon Glacier
 
+https://aws.amazon.com/glacier/
+
 A specialized version of S3 for cold storage (archiving data)
 
-#### AWS Storage Gateway
-
-
-### EFS - Elastic File Storage
-
-Simple, scalable, fully managed elastic NFS file system 
-Shareable hierarchical file system
-Can't be shared with Windows VM
-Stored redundantly across multiple AZs
-Uses a traditional file permissions model, file locking capabilities, and hierarchical directory structure via the NFSv4 protocol
-
-With Private Link it's possible to create a service to access your EFS as an endpoint.
-
-Per-operation latency: Low, consistent
-Throughput: Multiple GB/s
-Access: 1-1000s of VMs instances (VMs or on-premise) from multiple AZs concurrently.
-
-Use cases: web serving, CMS, enterprise apps, media and entertainment, home directories, database backups, developer tools, container storage, big data analytics
 
 ### EBS - Elastic Block Storage
+
+https://aws.amazon.com/ebs/
 
 Per-operation latency: Lowest, consistent
 Throughput: Single GB/s
@@ -237,32 +227,62 @@ Access: Single EC2 in a single AZ
 
 Use cases: boot volumes, transactional and no-sql databases, data warehousing & ETL
 
+### EFS - Elastic File Storage
+
+https://aws.amazon.com/efs/
+
+Simple, scalable, fully managed elastic NFS file system 
+Shareable hierarchical file system
+Can't be shared with Windows VM
+Stored redundantly across multiple AZs
+Uses a traditional file permissions model, file locking capabilities, and hierarchical directory structure via the NFSv4 protocol
+With Private Link it's possible to create a service to access your EFS as an endpoint (Elastic Network Interface) within your VPC.
+
+Per-operation latency: Low, consistent
+Throughput: Multiple GB/s
+Access: 1-1000s of VMs instances (VMs or on-premise) from multiple AZs concurrently.
+
+Use cases: web serving, CMS, enterprise apps, media and entertainment, home directories, database backups, developer tools, container storage, big data analytics
+
 ### Amazon FSx
+
+AWS FSx is an AWS-managed service for popular file systems
+Intended to be cost-optimized b/c the networked attached storage (NAS) hardware is not demanding. 
+
+Two types offered:
+* [Amazon FSx for Lustre](https://aws.amazon.com/fsx/lustre/) for compute-intensive workloads.
+* [Amazon FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) for business applications
+  * Can be secured by AWS-managed Active Directory or self-managed Active Directory.
+  * Intent is to simplify set up of the compute instances that run the FSx so that the AWS set up is more declarative.
+
+
 
 
 ## Virtual Private Cloud
 
-Virtual Private Cloud
+[Virtual Private Cloud](https://aws.amazon.com/vpc/)
 
 ## Compute Services
 
-Compute Services
+[Compute Services](https://aws.amazon.com/products/compute/)
 
 ## Identity and Access Management
 
-Identity and Access Mangement
+[Identity and Access Mangement](https://aws.amazon.com/iam/)
 
 ## Auto Scaling and Virtual Network Services
 
-Auto Scaling and Virtual Network Services
+[Auto Scaling](https://aws.amazon.com/autoscaling/) and Virtual Network Services
 
 ## Application Development
 
 Application Development
 
+[Developer Tools](https://aws.amazon.com/products/developer-tools/)
+
 ## Databases
 
-Databases
+[Databases](https://aws.amazon.com/products/databases/)
 
 ## Services and Design Scenarios
 
