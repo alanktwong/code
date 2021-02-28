@@ -305,7 +305,29 @@ Features of VPC
   - Private DNS names
   - Public DNS names
 
+### Amazon VPC Applications
+
 [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)
+
+- [Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+  - [Your VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
+    - Create a VPC -> VPCs do not talk to one another unless routes are built between them.
+    - Classless Inter-Domain Routing (CIDR) - creates a private IPv4
+    - Create a Subnet -> dedicates a set of the IPs that belong within a VPC
+
+- Configuring DHCP Options
+  - On premise, DHCP is setup by assigning ranges of IP addresses. AWS will have already done this when you defined a subnet.
+  - So you need to [define a DHCP option for a subnet](https://console.aws.amazon.com/vpc/home?region=us-east-1#dhcpOptions:). A DHCP option is a configuration parameter related to an IP address protocol, the protocol we use to get an IP addresses in all the rest of our configuration on the device that receives the configuration set, so that it could be a client. It could be a server
+  - Can define a DHCP option set name (recommended), domain name, domain name servers, network time protocol (NTP) servers, NetBIOS name servers and NetBIOS node types. NetBIOS is not frequently used today.
+
+- Elastic IP addresses (EIPs)
+
+- Endpoints
+
+
+### VPC Peering
+
+### Amazon VPC Security
 
 ### VPC Resources
 
