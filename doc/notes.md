@@ -322,6 +322,12 @@ Features of VPC
 
 - Elastic IP addresses (EIPs)
 
+EIP is a public IP address from the VPC and is allocated to an AWS region until it is released.
+You are charged for it.
+Network interfaces consume EIPs
+EIPs can be moved between instances in the same region.
+A way to ensure an EIP is not used (so that you can release it and not pay for it) is to check that there is no instance associated with it.
+
 - Endpoints
 
 
