@@ -256,11 +256,55 @@ Two types offered:
   * Intent is to simplify set up of the compute instances that run the FSx so that the AWS set up is more declarative.
 
 
+### AWS Storage Gateway
+
+https://aws.amazon.com/storagegateway/
+
+A software appliance that connects your on-premise storage on your local on-premise network to AWS cloud. Can use:
+
+1. File-based (NFSv4) 
+2. Volume-based (internet SCSI)
+3. Tape-based
+
+You can choose to install a VM on your network or setup an EC2 instance
+
+File Gateway provides an interface to S3 buckets.
+
+### Storage Access Security
+
+From AWS CLI, `aws s3api` is the set of APIs that can manage S3 buckets: will include setting the security policy.
+
+Be aware of 2 metrics of measuring size: one is decimal-based preferred by networking folks, but the other is binary-based, preferred by storage folks.
+
+Kilobyte - kB (1000)  -> Kibibyte - kiB (2^10 = 1024)
+Megabyte - MB (10^6)  -> Mebibyte - MiB (2^20 = 1,048,576)
+Gigabyte - GB (10^9)  -> Gibibyte - GiB (2^30 = 1,073,741,824)
+Terabyte - TB (10^12) -> Tebibyte - TiB (2^40 = 1,099,511,627,776)
 
 
 ## Virtual Private Cloud
 
 [Virtual Private Cloud](https://aws.amazon.com/vpc/)
+
+Definining Virtual Private Cloud
+  - It makes a public code (e.g. AWS) act "as if" it were private cloud
+  - It is a logical construct. VPC endpoints connect to AWS resources. The VPC endpoint can be controlled by policies.
+  - VPN Connections can be made to the VPC
+  - Applications can run in the VPC or on-premises
+  - Subnets can be created within the VPC
+
+Multiple VPCs can be interconnected using peering.
+Distinguish between old use of an endpoint (any way to access a server throug a network) with AWS defining an endpoint as a channel secured by a policy to access an AWS resource.
+
+All AWS accounts have a default VPC. One in each region. AMZ recoomends do not delete.
+Features
+- Dynamic private IP
+- Dynamic public IP
+- AWS-provisioned DNS names - not human friendly
+- Private DNS names
+- Public DNS names
+
+
 
 ## Compute Services
 
