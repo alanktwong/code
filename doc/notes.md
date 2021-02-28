@@ -309,7 +309,7 @@ Features of VPC
 
 [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)
 
-- [Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+[Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
   - [Your VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
     - Create a VPC -> VPCs do not talk to one another unless routes are built between them.
     - Classless Inter-Domain Routing (CIDR) - creates a private IPv4
@@ -320,13 +320,24 @@ Features of VPC
   - So you need to [define a DHCP option for a subnet](https://console.aws.amazon.com/vpc/home?region=us-east-1#dhcpOptions:). A DHCP option is a configuration parameter related to an IP address protocol, the protocol we use to get an IP addresses in all the rest of our configuration on the device that receives the configuration set, so that it could be a client. It could be a server
   - Can define a DHCP option set name (recommended), domain name, domain name servers, network time protocol (NTP) servers, NetBIOS name servers and NetBIOS node types. NetBIOS is not frequently used today.
 
-- Elastic IP addresses (EIPs)
+[Elastic IP addresses (EIPs)](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html)
 
 EIP is a public IP address from the VPC and is allocated to an AWS region until it is released.
 You are charged for it.
 Network interfaces consume EIPs
 EIPs can be moved between instances in the same region.
 A way to ensure an EIP is not used (so that you can release it and not pay for it) is to check that there is no instance associated with it.
+
+[Elastic Network Interface (ENIs)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ElasticNetworkInterfaces.html)
+
+A virtual network interface attached to an instance.
+Only available w/i a VPC
+associated with a subnet
+allows dual homing - a network node that can have more than 1 home. Examples:
+  - Internet router has a home on the internet and a home on your private network
+  - Firewall has a home on the untrusted parts of the network and and a home on the trusted parts of the network.
+General practice: 1 public address with multiple private addresses.
+It is a virtual network network card installed on a VPC, where it can be given an IP address on any subnet or the public facing internet 
 
 - Endpoints
 
