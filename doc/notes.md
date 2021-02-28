@@ -297,13 +297,57 @@ Multiple VPCs can be interconnected using peering.
 Distinguish between old use of an endpoint (any way to access a server throug a network) with AWS defining an endpoint as a channel secured by a policy to access an AWS resource.
 
 All AWS accounts have a default VPC. One in each region. AMZ recoomends do not delete.
-Features
-- Dynamic private IP
-- Dynamic public IP
-- AWS-provisioned DNS names - not human friendly
-- Private DNS names
-- Public DNS names
 
+Features of VPC
+  - Dynamic private IP
+  - Dynamic public IP
+  - AWS-provisioned DNS names - not human friendly
+  - Private DNS names
+  - Public DNS names
+
+[AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)
+
+All VPC Resources are the building blocks to build a network in the cloud
+  - [Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+    - [Your VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
+      - Create a VPC -> VPCs do not talk to one another unless routes are built between them.
+      - Classless Inter-Domain Routing (CIDR) - creates a private IPv4
+      - Create a Subnet -> dedicates a set of the IPs that belong within a VPC
+    - [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
+    - [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+    - [Egress Only Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
+    - [Carrier Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html)
+    - [DHCP Options Set](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html)
+    - [Elastic IPs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html)
+    - [Managed Prefix Lists](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html)
+    - [Endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) appears to be part of AWS PrivateLink
+    - [Endpoint Services](https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html) appears to be part of AWS Private Link
+    - [NAT Gatweways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+    - Peering Connections
+  - [Security](https://docs.aws.amazon.com/vpc/latest/userguide/security.html)
+    - [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
+    - [Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+  - Reachability
+    - [Reachability Analyzer](https://docs.aws.amazon.com/vpc/latest/reachability/what-is-reachability-analyzer.html)
+  - [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/)
+    - Firewalls
+    - Firewall policies
+    - Network Firewall rule groups
+  - Virtual Private Network (VPN)
+    - Customer gateways
+    - Virtual Private Gateways
+    - Site-to-Site VPN Connecitons
+    - Client VPN Endpoints
+  - [Transit Gateways](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html)
+    - Transit Gateways
+    - Transit Gateway Attachments
+    - Transit Gateway Route Tables
+    - Transit Gateway Multicast
+    - Network Manager
+  - [Traffic Monitoring](https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html)
+    - Mirror Sessions
+    - Mirror Targets
+    - Mirror Filters
 
 
 ## Compute Services
