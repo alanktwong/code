@@ -80,7 +80,7 @@
 * OOTB Examples from AWS: `AdministratorAccess`, `AmazonS3FullAccess`, `AmazonS3ReadOnlyAccess`, etc.
 
 E.g. AdministratorAccess json =>
-``` json
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -119,6 +119,65 @@ A factor may be:
 [AWS MFA User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html)
 
 ## Key Rotation
+
+Access keys are used to access AWS programmatically
+(e.g. via the [AWS CLI](https://aws.amazon.com/cli/)
+or AWS SDK in [Python](https://aws.amazon.com/sdk-for-python/),
+[JavaScript](https://aws.amazon.com/sdk-for-javascript/),
+[Java](https://aws.amazon.com/sdk-for-java/),
+[Ruby](https://aws.amazon.com/sdk-for-ruby/),
+[Go Lang](https://aws.amazon.com/sdk-for-go/,
+[PHP](https://aws.amazon.com/sdk-for-php/),
+[.NET](https://aws.amazon.com/sdk-for-net/),
+[C++](https://aws.amazon.com/sdk-for-cpp/), etc.)
+
+Best practice is to rotate these keys periodically.
+
+Not every account needs these keys. E.g. a user who only will work on AWS via the AWS Web Console
+
+Key Rotation Process
+
+1. Create a 2nd access key in addition to the one in use
+2. Update all your applications to use the new access key
+3. Validate the applications are still working.
+4. Change state of previous access key inactive.
+5. Validate the applications are still working (b/c you may have missed one in step 3)
+6. Only if (5) passes for all apps, you should delete the previous access key.
+   If it fails for some apps, reactivate the previous key and switch over to the new access key.
+
+
+E.g. check your access key: `aws iam list-access-keys --user-name alan.wong`
+
+```json
+{
+    "AccessKeyMetadata": [
+        {
+            "UserName": "alan.wong",
+            "AccessKeyId": "alphanumeric(20)",
+            "Status": "Active",
+            "CreateDate": "2021-05-04T17:14:55+00:00"
+        }
+    ]
+}
+```
+
+If you create an access key, you will get back the secret and the AccessKeyId
+
+E.g. check your access key: `aws iam create-access-key --user-name alan.wong`
+
+```json
+{
+    "AccessKeyMetadata": [
+        {
+            "UserName": "alan.wong",
+            "AccessKeyId": "alphanumeric(20)",
+            "SecretAccessKey": "alphanumeric(40)",
+            "Status": "Active",
+            "CreateDate": "2021-05-04T17:14:55+00:00"
+        }
+    ]
+}
+```
 
 ## Multi permissions
 
