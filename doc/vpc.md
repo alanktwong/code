@@ -93,6 +93,34 @@ Establishing a VPC connection
 
 ## Amazon VPC Security
 
+### Security Groups
+
+[VPC Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) acts like
+a firewall.
+    * Applied to an instance in a VPC
+    * Applied to an instance not a subnet
+ They also define allowed traffic flows
+    * Ingress (entrance)
+    * Egress (exit)
+
+* Storage Groups
+    * Only supports Allow rules. The default is to Deny. These are properties of a Closed-to-Open system
+    * It uses stateful processing
+* Network access control lists (NACLs)
+    * Applied on subnets
+    * It uses stateless processing
+    * Supports both Allow and Deny rules.
+    * Rule number defines precedence.
+        * Lowest numbered rules first
+        * First match applies
+
+
+### Network Address Translation (NAT)
+
+### Gateways (VPGs and CGWs)
+
+### VPN Configuration Options
+
 ## VPC Resources
 
 All VPC Resources are the building blocks to build a network in the cloud
