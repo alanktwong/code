@@ -61,6 +61,36 @@ It is a virtual network network card installed on a VPC, where it can be given a
 
 ## VPC Peering
 
+Suppose you have 2 VPCs. How do you enable them to communicate?
+
+[VPC Peering Guide](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
+* Enables 2 VPCs to communicate
+* It is not transitive
+
+[VPC Peering Basics](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html)
+
+Establishing a VPC connection
+
+1. Owner of *requester* VPC sends a request to the owner of the *accepter* VPC to create the VPC peering connection.
+    * Requires owner role
+    * IP [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) blocks in each VPC cannot overlap
+        * E.g. `10.0.0.0/16` and `192.168.0.0/16` overlap
+    * Therefore each VPC should use a unique CIDR block
+2. The owner of the accepter VPC accepts the VPC peering connection request to activate the VPC peering connection.
+3. To enable the flow of traffic between the VPCs using private IP addresses,
+   the owner of each VPC in the VPC peering connection must manually add a route to one or more of
+   their VPC route tables that points to the IP address range of the other VPC (the peer VPC).
+4. If required, update the security group rules that are associated with your instance to
+   ensure that traffic to and from the peer VPC is not restricted.
+   A security group rule in AWS is like a firewall rule.
+5. By default, if instances on either side of a VPC peering connection address each other using
+   a public DNS hostname, the hostname resolves to the instance's public IP address.
+   To change this behavior, enable DNS hostname resolution for your VPC connection.
+   After enabling DNS hostname resolution, if instances on either side of the VPC peering connection
+   address each other using a public DNS hostname, the hostname resolves
+   to the private IP address of the instance.
+
+
 ## Amazon VPC Security
 
 ## VPC Resources
