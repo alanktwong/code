@@ -1,7 +1,20 @@
 
 # Virtual Private Cloud
 
-[Virtual Private Cloud](https://aws.amazon.com/vpc/)
+[Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+
+- [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
+- [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+- [Egress Only Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
+- [Carrier Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html)
+- [DHCP Options Set](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html)
+- [Elastic IPs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html)
+- [Managed Prefix Lists](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html)
+- [Endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) appears to be part of AWS PrivateLink
+- [Endpoint Services](https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html) appears to be part of AWS Private Link
+- [NAT Gatweways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+- Peering Connections
+
 
 Definining Virtual Private Cloud
   - It makes a public code (e.g. AWS) act "as if" it were private cloud
@@ -93,6 +106,8 @@ Establishing a VPC connection
 
 ## Amazon VPC Security
 
+[Security](https://docs.aws.amazon.com/vpc/latest/userguide/security.html)
+
 ### Security Groups
 
 [VPC Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) acts like
@@ -117,53 +132,58 @@ a firewall.
 
 ### Network Address Translation (NAT)
 
+
+[NAT](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html) s designed for IP address conservation. It enables private IP networks that use unregistered IP addresses to connect to the Internet. NAT operates on a router, usually connecting two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network.
+
+As part of this capability, NAT can be configured to advertise only one address for the entire network to the outside world. This provides additional security by effectively hiding the entire internal network behind that address. NAT offers the dual functions of security and address conservation and is typically implemented in remote-access environments.
+
+NAT translates between
+    * Private IP addresses
+    * Public IP addresses
+
+In AWS, [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html) is provided
+by a NAT gateway or NAT isntance
+
+NAT instances
+* Implemented on a public and private subnet
+    * Elastic IP connected with NAT instance
+* Instances in the private subnet connect through the NAT instance
+* This leverages a standard feature of Linux servers to connect two network cards
+* How to:
+    * You can create an EC2 instance that supports NAT via an AMI
+
+NAT gateways
+* Work more like traditional NAT server/appliances
+* Requires an EIP
+* NAT gateway will require a change to the route tables
+    * If IPv4 says `0.0.0.0/0` it is the fall through IPv4 address
+
 ### Gateways (VPGs and CGWs)
 
 ### VPN Configuration Options
 
-## VPC Resources
+# Other networking resources
 
-All VPC Resources are the building blocks to build a network in the cloud
-
-### [Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
-
-- [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
-- [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
-- [Egress Only Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
-- [Carrier Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html)
-- [DHCP Options Set](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html)
-- [Elastic IPs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html)
-- [Managed Prefix Lists](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html)
-- [Endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) appears to be part of AWS PrivateLink
-- [Endpoint Services](https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-service.html) appears to be part of AWS Private Link
-- [NAT Gatweways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
-- Peering Connections
-
-### [Security](https://docs.aws.amazon.com/vpc/latest/userguide/security.html)
-
-- [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
-- [Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
-
-### Reachability
+## Reachability
 
 - [Reachability Analyzer](https://docs.aws.amazon.com/vpc/latest/reachability/what-is-reachability-analyzer.html)
 
 
-### [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/)
+## [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/)
 
 - Firewalls
 - Firewall policies
 - Network Firewall rule groups
 
 
-### Virtual Private Network (VPN)
+## Virtual Private Network (VPN)
 
 - Customer gateways
 - Virtual Private Gateways
 - Site-to-Site VPN Connecitons
 - Client VPN Endpoints
 
-### [Transit Gateways](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html)
+## [Transit Gateways](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html)
 
 - Transit Gateways
 - Transit Gateway Attachments
@@ -171,8 +191,7 @@ All VPC Resources are the building blocks to build a network in the cloud
 - Transit Gateway Multicast
 - Network Manager
 
-
-### [Traffic Monitoring](https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html)
+## [Traffic Monitoring](https://docs.aws.amazon.com/vpc/latest/mirroring/what-is-traffic-mirroring.html)
 
 - Mirror Sessions
 - Mirror Targets
