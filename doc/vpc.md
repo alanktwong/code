@@ -146,6 +146,8 @@ by a NAT gateway or NAT isntance
 
 NAT instances
 * Implemented on a public and private subnet
+
+
     * Elastic IP connected with NAT instance
 * Instances in the private subnet connect through the NAT instance
 * This leverages a standard feature of Linux servers to connect two network cards
@@ -160,7 +162,47 @@ NAT gateways
 
 ### Gateways (VPGs and CGWs)
 
+VPN is the primary way to access a VPC.
+A VPN is an encrypted public network connection.
+Strictly speaking it is not private b/c you still connect to it via
+a public network, the Internet.
+
+AWS provides the following [VPN services](https://docs.aws.amazon.com/vpn/)
+* VPG + CGW = VPN
+    * Virtual Private Gateway (VPG)
+        * It concentrates the VPN connections to the gateway which functions as an access location
+    * Opposite end of the VPG requires a Customer Gateway (CGW) which is typically in your
+      data center.
+        * This may be a physical device or a software application
+* AWS Hardware VPN
+    * Requires AWS hardware on your DC
+    * Connect to a either a AWS hardware appliance or AWS VPG on the AWS side 
+* AWS Direct Connect
+    * Can be used to correct 2 VPCs
+    * Can also connect your DC to AWS VPC
+* AWS VPN Cloud Hub
+* AWS Software VPN
+    * Examples: Layer 2 Tunneling Protocol (L2TP), IP Sec
+
+
+On [connecting to AWS VPC via VPN](https://docs.aws.amazon.com/vpc/latest/userguide/vpn-connections.html)
+
 ### VPN Configuration Options
+
+Roughly around Summer 2019, split tunnel VPNs were introduced to AWS
+
+What is [Split Tunneling](https://en.wikipedia.org/wiki/Split_tunneling)?
+* Most traffic goes through the VPN tunnel
+* Some traffic (that goes to the internet) bypasses the tunnel
+
+Another capability of AWS VPN
+* Using certificates for authentication rather than tokens/passphrases
+
+Another capability of AWS: [Direct Connect](https://docs.aws.amazon.com/directconnect/)
+* Here is a helpful diagram: ![architectural diagram](https://docs.aws.amazon.com/directconnect/latest/UserGuide/images/direct-connect-overview.png)
+
+* AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this connection, you can create virtual interfaces directly to public AWS services (for example, to Amazon S3) or to Amazon VPC, bypassing internet service providers in your network path. An AWS Direct Connect location provides access to AWS in the Region with which it is associated. You can use a single connection in a public Region or AWS GovCloud (US) to access public AWS services in all other public Regions.
+
 
 # Other networking resources
 
