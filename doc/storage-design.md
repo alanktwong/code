@@ -1,7 +1,7 @@
 
 # Storage Design
 
-[Storage Design](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-2-storage-design/storage-services?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
+[LinkedIn Learning Video Course: Storage Design](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-2-storage-design/storage-services?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
 
 ## S3 - Simple Storage Service
 

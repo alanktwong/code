@@ -1,5 +1,6 @@
-
 # Application Development
+
+[LinkedIn Learning Video Course: Application Development](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-7-application-deployment?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
 
 Application Development
 

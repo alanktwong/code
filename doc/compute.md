@@ -1,5 +1,7 @@
 # Compute Services
 
+[LinkedIn Learning Video Course: Compute Services](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-4-compute-services?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
+
 [Compute Services](https://aws.amazon.com/products/compute/)
 
 ## Compute Services Design

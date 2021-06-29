@@ -1,6 +1,8 @@
 
 # Services and Design Scenarios
 
+[LinkedIn Learning Video Course: Services and Design Scenarios](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-9-services-and-design-scenarios?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
+
 ## Additional Services
 
 ### Media Content Delivery

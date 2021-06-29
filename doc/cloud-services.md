@@ -1,7 +1,6 @@
-
 # Cloud Services Overview
 
-[Cloud Services Overview](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-1-cloud-services-overview/aws-services-part-1?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
+[LinkedIn Learning Video Course: Cloud Services Overview](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-1-cloud-services-overview?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
 
 AWS Services
 

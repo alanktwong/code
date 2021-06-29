@@ -1,7 +1,9 @@
-
 # Virtual Private Cloud
 
-[Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+[LinkedIn Learning Video Course: Virtual Private Cloud](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-3-virtual-private-cloud?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
+
+
+[AWS Documentation: Virtual Private Clouds](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
 
 - [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
 - [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)

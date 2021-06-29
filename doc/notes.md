@@ -1,12 +1,10 @@
-
 # LinkedIn Learning Path
 
 [Prepare for the AWS Certified Solutions Architect - Associate Exam (SAA-C02)](https://www.linkedin.com/learning/paths/prepare-for-the-aws-certified-solutions-architect-associate-exam-saa-c02)
 
 ## Exam Tips
 
-[Exam Tips](https://www.linkedin.com/learning/exam-tips-aws-certified-solutions-architect-associate-saa-c02/aws-solutions-architect?contextUrn=urn%3Ali%3AlyndaLearningPath)
-
+[LinkedIn Learning Video Course: Exam Tips](https://www.linkedin.com/learning/exam-tips-aws-certified-solutions-architect-associate-saa-c02/aws-solutions-architect?contextUrn=urn%3Ali%3AlyndaLearningPath)
 
 
 Why the exam?

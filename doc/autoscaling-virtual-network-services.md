@@ -1,5 +1,6 @@
+# Auto Scaling and Virtual Network Services
 
-# Auto Scaling
+[LinkedIn Learning Video Course: Auto Scaling and Virtual Network Services](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-6-auto-scaling-and-virtual-network-services?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
 
 [Auto Scaling](https://aws.amazon.com/autoscaling/)
 

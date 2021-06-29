@@ -1,5 +1,6 @@
-
 # Identity and Access Management
+
+[LinkedIn Learning Video Course: Identity and Access Management](https://www.linkedin.com/learning/aws-certified-solutions-architect-associate-saa-c02-5-identity-and-access-management?contextUrn=urn%3Ali%3AlyndaLearningPath%3A5f0f83ce498e4916ed6c9b22)
 
 [Identity and Access Mangement](https://aws.amazon.com/iam/)
 
